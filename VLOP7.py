@@ -2,9 +2,11 @@ import psycopg2
 from tqdm import tqdm
 import time
 
-conn = psycopg2.connect(host="192.168.1.50",
+#adds a bunch of fakeusers to the mastodon database
+
+conn = psycopg2.connect(host="localhost",
                     database="mastodon_production",
-                    user="mastodon", password='NFd2Un1pi7mVD4SjXjkFY3wusLoGP8')
+                    user="mastodon", password='')
 conn.autocommit = True
 
 #ALTER DATABASE mastodon_production SET faker.locales = 'az_AZ, cs_CZ, da_DK, de_AT, de_CH, de_DE, el_GR, en_AU, en_CA, en_GB, en_IE, en_IN, en_NZ, en_PH, en_US, es_CO, es_ES, es_MX, fa_IR, fi_FI, fil_PH, fr_CH, fr_FR, he_IL, hi_IN, hr_HR, hu_HU, hy_AM, id_ID, it_IT, ka_GE, ko_KR, ne_NP, nl_BE, nl_NL, no_NO, pl_PL, pt_BR, pt_PT, ro_RO, ru_RU, sk_SK, sl_SI, sv_SE, ta_IN, th_TH, tl_PH, uk_UA, zh_CN, zh_TW;
